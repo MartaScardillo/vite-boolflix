@@ -1,30 +1,44 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import SearchBar from './components/searchBar.vue';
+import axios from 'axios';
+import { store } from './store.js';
+
+export default {
+    data() {
+        return {
+            store,
+        };
+    },
+
+    components: {
+        SearchBar,
+    },
+
+    methods: {
+        fetchMovies() {
+            axios
+                .get('https://api.themoviedb.org/3/search/movie', {
+                    params: {
+                        api_key: this.store.API_KEY,
+                        query: this.store.query,
+                    },
+                })
+                .then((res) => {
+                    // console.log(res.data.results);
+                    this.store.movies = res.data.results;
+                });
+        },
+    },
+
+    created() {
+        console.log('CREATED');
+        this.fetchMovies();
+    },
+};
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+    <SearchBar @request="fetchMovies()" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>

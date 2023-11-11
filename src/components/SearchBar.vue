@@ -6,6 +6,8 @@ export default {
             store,
         };
     },
+
+    emits: ['request'],
 };
 </script>
 

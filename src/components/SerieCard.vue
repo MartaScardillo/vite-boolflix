@@ -10,7 +10,7 @@ export default {
     },
     methods: {
         getImg(imageName) {
-            return 'https://image.tmdb.org/t/p/w342/' + imageName;
+            return 'https://image.tmdb.org/t/p/w185/' + imageName;
         },
 
         // getFlag(original_language) {},
@@ -24,20 +24,25 @@ export default {
 
 <template>
     <div>
-        <ul>
-            <li>
+        <ul class="card">
+            <li class="card_image">
                 <img :src="getImg(serieData.poster_path)" alt="" />
-                <div>
-                    <span>{{ serieData.name }}</span>
-                    <span>{{ serieData.original_name }}</span>
-                    <span>
+            </li>
+            <li class="card_details">
+                <ul>
+                    <li>Titolo: {{ serieData.name }}</li>
+                    <li>Titolo originale: {{ serieData.original_name }}</li>
+                    <li>
+                        <span>Lingua originale: </span>
                         <img
                             class="flags"
                             :src="store.flags[serieData.original_language]"
                             alt=""
-                    /></span>
-                    <span>{{ serieData.vote_average.toFixed(2) }}</span>
-                </div>
+                        />
+                    </li>
+                    <li>Voto: {{ serieData.vote_average.toFixed(2) }}</li>
+                    <li>Overview: {{ serieData.overview }}</li>
+                </ul>
             </li>
         </ul>
     </div>
@@ -47,6 +52,6 @@ export default {
 @use '../style/partials/_common.scss' as *;
 
 .flags {
-    width: 50px;
+    width: 20px;
 }
 </style>

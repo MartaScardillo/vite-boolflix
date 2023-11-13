@@ -12,8 +12,6 @@ export default {
         getImg(imageName) {
             return 'https://image.tmdb.org/t/p/w185/' + imageName;
         },
-
-        // getFlag(original_language) {},
     },
 
     props: {
@@ -30,24 +28,23 @@ export default {
             </li>
             <li class="card_details">
                 <ul>
-                    <li>{{ movieData.title }}</li>
-                    <li>{{ movieData.original_title }}</li>
+                    <li>Titolo: {{ movieData.title }}</li>
+                    <li>Titolo originale: {{ movieData.original_title }}</li>
                     <li>
+                        <span>Lingua originale: </span>
+
                         <img
                             class="flags"
                             :src="store.flags[movieData.original_language]"
-                            alt=""
+                            :alt="movieData.original_language"
                         />
                     </li>
-                    <li>{{ movieData.vote_average.toFixed(2) }}</li>
+                    <li>Voto: {{ movieData.vote_average.toFixed(2) }}</li>
+                    <li>Overview: {{ movieData.overview }}</li>
                 </ul>
             </li>
         </ul>
     </div>
 </template>
 
-<style>
-.flags {
-    width: 50px;
-}
-</style>
+<style></style>

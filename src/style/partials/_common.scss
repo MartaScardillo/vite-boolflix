@@ -1,7 +1,6 @@
 .container {
     max-width: 90%;
     margin: 0 auto;
-    margin-top: 100px;
 }
 
 .row {
@@ -25,11 +24,16 @@
     justify-content: space-around;
 }
 
+.padding {
+    padding-top: 150px;
+}
+
 .card {
     position: relative;
     padding: 0 2px;
 
     &:hover {
+        transition-duration: 500ms;
         transform: scale(1.5);
         z-index: 50;
     }
@@ -38,7 +42,7 @@
 .card_details {
     position: absolute;
     top: 0;
-    bottom: 4px;
+    bottom: 2px;
     left: 2px;
     right: 2px;
     opacity: 0;
@@ -47,7 +51,7 @@
 
     &:hover {
         opacity: 1;
-        transition: opacity 100ms ease-out 100ms
+        // transition: opacity 100ms ease-out 100ms
         
     }
 }

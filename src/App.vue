@@ -1,4 +1,5 @@
 <script>
+import { Axios } from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import MovieCard from './components/MovieCard.vue';
 import SerieCard from './components/SerieCard.vue';
@@ -19,7 +20,6 @@ export default {
 
     created() {
         console.log('CREATED');
-        // this.fetchMovies();
     },
 };
 </script>

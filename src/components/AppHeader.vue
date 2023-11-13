@@ -7,6 +7,7 @@ export default {
     data() {
         return {
             store,
+            icons: [['fas', 'star']],
         };
     },
     components: { SearchBar },
@@ -21,8 +22,14 @@ export default {
                     },
                 })
                 .then((res) => {
-                    // console.log(res.data.results);
-                    this.store.movies = res.data.results;
+                    const movies = res.data.results;
+                    console.log(movies);
+                    movies.forEach((movie) => {
+                        movie.vote_average = Math.ceil(movie.vote_average / 2);
+                        console.log(movie.vote_average);
+                    });
+
+                    this.store.movies = movies;
                     // this.showdata();
                 });
 
@@ -34,29 +41,34 @@ export default {
                     },
                 })
                 .then((res) => {
-                    this.store.series = res.data.results;
-                    console.log(this.store.series);
-                    this.showdata();
+                    const series = res.data.results;
+                    console.log(series);
+                    series.forEach((serie) => {
+                        serie.vote_average = Math.ceil(serie.vote_average / 2);
+                        console.log(serie.vote_average);
+                    });
+
+                    this.store.series = series;
                 });
             // console.log(store.movies);
         },
-        showdata() {
-            console.log(this.store.series);
-            for (let i = 0; i < store.series.length; i++) {
-                console.log(
-                    'FILM N°' +
-                        i +
-                        '\n Titolo: ' +
-                        store.series[i].name +
-                        '\n Titolo Originale: ' +
-                        store.series[i].original_name +
-                        '\n Lingua Originale: ' +
-                        store.series[i].original_language.toUpperCase() +
-                        '\n Voto: ' +
-                        store.series[i].vote_average.toFixed(2)
-                );
-            }
-        },
+        // showdata() {
+        //     console.log(this.store.series);
+        //     for (let i = 0; i < store.series.length; i++) {
+        //         console.log(
+        //             'FILM N°' +
+        //                 i +
+        //                 '\n Titolo: ' +
+        //                 store.series[i].name +
+        //                 '\n Titolo Originale: ' +
+        //                 store.series[i].original_name +
+        //                 '\n Lingua Originale: ' +
+        //                 store.series[i].original_language.toUpperCase() +
+        //                 '\n Voto: ' +
+        //                 store.series[i].vote_average.toFixed(2)
+        //         );
+        //     }
+        // },
     },
 };
 </script>

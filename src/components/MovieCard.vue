@@ -39,7 +39,7 @@ export default {
                             :alt="movieData.original_language"
                         />
                     </li>
-                    <li>Voto: {{ movieData.vote_average.toFixed(2) }}</li>
+                    <li>Voto: {{ movieData.vote_average }}</li>
                     <li>Overview: {{ movieData.overview }}</li>
                 </ul>
             </li>

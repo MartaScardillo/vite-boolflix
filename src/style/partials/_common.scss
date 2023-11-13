@@ -24,13 +24,15 @@
     justify-content: space-around;
 }
 
-.padding {
-    padding-top: 150px;
+.title {
+    padding: 125px 0 50px;
+    color: white;
 }
 
 .card {
     position: relative;
     padding: 0 2px;
+    font-size: 12px;
 
     &:hover {
         transition-duration: 500ms;
@@ -48,10 +50,17 @@
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.682);
     color: white;
+    padding: 15px;
+    overflow-y: auto;
 
     &:hover {
         opacity: 1;
         // transition: opacity 100ms ease-out 100ms
         
     }
+
+}
+
+.card_details ul li {
+    padding-bottom: 10px;
 }

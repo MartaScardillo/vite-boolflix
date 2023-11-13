@@ -27,10 +27,12 @@ export default {
 <template>
     <AppHeader />
     <div class="container">
-        <div class="row padding">
+        <h1 class="title">Movies</h1>
+        <div class="row">
             <MovieCard v-for="movie in store.movies" :movieData="movie" />
         </div>
-        <div class="row padding">
+        <h1 class="title">Tv Series</h1>
+        <div class="row">
             <SerieCard v-for="serie in store.series" :serieData="serie" />
         </div>
     </div>

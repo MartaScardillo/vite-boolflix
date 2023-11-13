@@ -41,7 +41,7 @@ export default {
                         />
                     </li>
                     <li>
-                        Voto:
+                        Voto: {{ serieData.vote_average }}
                         <font-awesome-icon
                             v-for="i in serieData.vote_average"
                             :icon="['fas', 'star']"

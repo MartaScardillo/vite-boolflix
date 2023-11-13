@@ -40,7 +40,7 @@ export default {
                         />
                     </li>
                     <li>
-                        Voto:
+                        Voto: {{ movieData.vote_average }}
                         <font-awesome-icon
                             v-for="i in movieData.vote_average"
                             :icon="['fas', 'star']"

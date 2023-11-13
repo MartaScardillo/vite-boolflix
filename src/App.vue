@@ -19,7 +19,7 @@ export default {
     },
 
     created() {
-        console.log('CREATED');
+        // console.log('CREATED');
     },
 };
 </script>

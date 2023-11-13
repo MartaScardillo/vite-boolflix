@@ -40,7 +40,17 @@ export default {
                             alt=""
                         />
                     </li>
-                    <li>Voto: {{ serieData.vote_average.toFixed(2) }}</li>
+                    <li>
+                        Voto:
+                        <font-awesome-icon
+                            v-for="i in serieData.vote_average"
+                            :icon="['fas', 'star']"
+                        />
+                        <font-awesome-icon
+                            v-for="i in 5 - serieData.vote_average"
+                            :icon="['far', 'star']"
+                        />
+                    </li>
                     <li>Overview: {{ serieData.overview }}</li>
                 </ul>
             </li>

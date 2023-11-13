@@ -39,7 +39,17 @@ export default {
                             :alt="movieData.original_language"
                         />
                     </li>
-                    <li>Voto: {{ movieData.vote_average }}</li>
+                    <li>
+                        Voto:
+                        <font-awesome-icon
+                            v-for="i in movieData.vote_average"
+                            :icon="['fas', 'star']"
+                        />
+                        <font-awesome-icon
+                            v-for="i in 5 - movieData.vote_average"
+                            :icon="['far', 'star']"
+                        />
+                    </li>
                     <li>Overview: {{ movieData.overview }}</li>
                 </ul>
             </li>

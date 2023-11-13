@@ -7,7 +7,6 @@ export default {
     data() {
         return {
             store,
-            icons: [['fas', 'star']],
         };
     },
     components: { SearchBar },
@@ -26,7 +25,7 @@ export default {
                     console.log(movies);
                     movies.forEach((movie) => {
                         movie.vote_average = Math.ceil(movie.vote_average / 2);
-                        console.log(movie.vote_average);
+                        // console.log(movie.vote_average);
                     });
 
                     this.store.movies = movies;
@@ -45,7 +44,7 @@ export default {
                     console.log(series);
                     series.forEach((serie) => {
                         serie.vote_average = Math.ceil(serie.vote_average / 2);
-                        console.log(serie.vote_average);
+                        // console.log(serie.vote_average);
                     });
 
                     this.store.series = series;

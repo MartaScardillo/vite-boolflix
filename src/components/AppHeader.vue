@@ -73,20 +73,35 @@ export default {
 </script>
 
 <template>
-    <div class="header">
-        <span style="color: RED" class="d-flex">BOOLFLIX</span>
-        <SearchBar @request="fetchMovies" />
+    <div class="header d-flex">
+        <ul class="header_content d-flex justify-between align-center">
+            <li class="header_title d-flex">BOOLFLIX</li>
+            <li>
+                <SearchBar @request="fetchMovies" />
+            </li>
+        </ul>
     </div>
 </template>
 
 <style lang="scss">
 @use '../style/partials/_common.scss' as *;
 .header {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.713);
     position: fixed;
     width: 100%;
     height: 70px;
     max-height: 70px;
     z-index: 1;
+}
+
+.header_content {
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.header_title {
+    color: red;
+    font-size: 30px;
 }
 </style>

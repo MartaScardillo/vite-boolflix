@@ -12,32 +12,29 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex">
+    <div class="search d-flex">
         <input
             type="text"
             placeholder="Cerca un film"
             class="search_bar"
             v-model="this.store.query"
         />
-        <button type="submit" class="search_button" @click="$emit('request')">
-            btn
+        <button class="search_button" type="submit" @click="$emit('request')">
+            <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
         </button>
     </div>
 </template>
 
-<style scoped>
-.search_button {
-    border: none;
-    outline: none;
-}
+<style lang="scss">
+@use '../style/partials/_common.scss' as *;
+// .search_button {
+//     border: none;
+//     outline: none;
+// }
 
-.search_bar {
-    border: none;
-    padding: 5px;
-    outline: none;
-}
-
-.d-flex {
-    display: flex;
-}
+// .search_bar {
+//     border: none;
+//     padding: 5px;
+//     outline: none;
+// }
 </style>

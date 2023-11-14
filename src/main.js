@@ -6,10 +6,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faStar, faStarEmpty);
+library.add(faStar, faStarEmpty, faMagnifyingGlass);
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
